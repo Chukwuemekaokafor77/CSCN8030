@@ -1,9 +1,42 @@
-# Data Project - Stock Market Analysis
+# Stock Market Analysis and Prediction Web App
 
 ## Objective
-This notebook explores stock market data, focusing on technology giants like Apple, Amazon, Google, and Microsoft. It demonstrates the use of yfinance to retrieve stock information and visualization techniques with Seaborn and Matplotlib. The analysis includes assessing stock risk using historical performance data and predicting future prices using a Linear Regression model.
+This project is a Streamlit web application designed for analyzing and predicting stock market data. The application provides various features for visualizing stock performance and predicting future prices using an LSTM model.
 
-## Stock Market Reactions to Election
+## Features
+
+### Stock Data Retrieval
+- Utilizes `yfinance` to fetch historical stock data.
+- Predefined list of popular stock tickers: `AAPL`, `META`, `NVDA`, `NFLX`.
+- Users can select multiple stock tickers for analysis.
+
+### User Inputs
+- **Stock Tickers Selection**: Choose from predefined popular tickers or input custom tickers.
+- **Date Range Selection**: Customize the start and end dates for analysis.
+- **Analysis Type Selection**: Options include Closing Prices, Volume, Moving Averages, Daily Returns, Correlation Heatmap, and Distribution of Daily Changes.
+- **Additional Information Options**: Users can opt to display Stock Actions, Quarterly Financials, Institutional Shareholders, Quarterly Balance Sheet, Quarterly Cashflow, Analysts Recommendation, and Predicted Prices.
+
+### Data Visualization
+- **Closing Prices**: Line chart visualization.
+- **Volume**: Line chart visualization.
+- **Moving Averages**: Line charts of 20-day and 50-day moving averages.
+- **Daily Returns**: Line chart of the daily returns.
+- **Correlation Heatmap**: Heatmap of correlations between selected stocks.
+- **Distribution of Daily Changes**: Histogram of daily changes in stock prices.
+
+### Additional Information
+- **Stock Actions**: Corporate actions such as dividends and stock splits.
+- **Quarterly Financials**: Financial reports on a quarterly basis.
+- **Institutional Shareholders**: Information on major shareholders.
+- **Quarterly Balance Sheet**: Quarterly balance sheet data.
+- **Quarterly Cashflow**: Quarterly cash flow data.
+- **Analysts Recommendation**: Recommendations and ratings from financial analysts.
+
+### Price Prediction
+- **LSTM Model**: Predict future stock prices using an LSTM model.
+  - Historical data is scaled and split into training and test sets.
+  - Model trained on 95% of data and validated on the remaining 5%.
+  - Predictions are visualized alongside actual prices.
 
 ## Task Breakdown
 1. **Identify reliable market data APIs**
@@ -21,43 +54,53 @@ This notebook explores stock market data, focusing on technology giants like App
 ## Documentation
 
 ### Data Collection
-- Data sourced from Yahoo Finance using yfinance library.
-- Stock symbols: AAPL, GOOG, MSFT, AMZN.
-- Time period: Last one year.
+- Data sourced from Yahoo Finance using `yfinance` library.
+- Predefined list of popular stock tickers: `AAPL`, `META`, `NVDA`, `NFLX`.
+- Customizable time period via user input.
 
 ### Data Preprocessing
 - Filled missing values using forward fill.
-- Added company name column.
-- Concatenated individual stock data into a single DataFrame.
+- Added moving averages (20-day and 50-day) for selected analysis.
+- Calculated daily returns and daily changes.
 
 ### Data Standardization
 - Ensured consistent date format.
-- Handled missing values.
+- Handled missing values using appropriate methods.
 
 ### Data Visualization
-- Plotted closing prices and volume of sales.
-- Calculated and plotted moving averages (10, 20, 50 days).
-- Visualized daily returns using histograms and line plots.
+- **Closing Prices**: Line chart of the closing prices.
+- **Volume**: Line chart of the trading volume.
+- **Moving Averages**: Line charts of 20-day and 50-day moving averages.
+- **Daily Returns**: Line chart of the daily returns.
+- **Correlation Heatmap**: Heatmap of the correlations between selected stocks.
+- **Distribution of Daily Changes**: Histogram of the daily changes in stock prices.
 
 ### Feature Extraction
-- Calculated daily returns.
-- Analyzed correlations between stock returns using heatmaps and pair plots.
+- Calculated daily returns and moving averages.
+- Analyzed correlations between stock returns using heatmaps.
 
 ### Data Splitting
 - Split data into training and test sets for model validation.
 
+### Model Building
+- **LSTM Model for Price Prediction**:
+  - Built an LSTM model using `keras` to predict future stock prices.
+  - Trained on 95% of historical data and tested on the remaining 5%.
+
 ## Conclusion
-In this notebook, we delved into the world of stock market data analysis. Here's a summary of what we explored:
+This project provided a comprehensive analysis of stock market data using Python. Key takeaways include:
+- Retrieving and processing stock data using `yfinance`.
+- Visualizing stock data trends with `matplotlib` and `seaborn`.
+- Implementing an LSTM model to predict future stock prices.
+- Evaluating additional financial information for deeper insights.
 
-- We learned how to retrieve stock market data from Yahoo Finance using the yfinance library.
-- Using Pandas, Matplotlib, and Seaborn, we visualized time-series data to gain insights into the stock market trends.
-- We measured the correlation between different stocks to understand how they move in relation to each other.
-- We assessed the risk associated with investing in a particular stock by analyzing its daily returns.
-- Lastly, we split the data into training and validation sets for further analysis and model training.
-
-If you have any questions or need further clarification on any topic covered in this notebook, feel free to ask in the comments below. I'll be happy to assist you!
+By leveraging these techniques, users can gain a better understanding of stock performance and make informed investment decisions.
 
 ## References
-- Investopedia on Correlation
-- [Article 1](file:///C:/Users/Admin/Desktop/C_AIML/semestert2/AI%20for%20Business/article1.pdf)
+- [Investopedia on Correlation](https://www.investopedia.com/terms/c/correlation.asp)
 - [Stock Data Analysis Project](https://medium.com/@ethan.duong1120/stock-data-analysis-project-python-1bf2c51b615f)
+- [Streamlit Documentation]  (https://streamlit.io/gallery)
+- [Mozilla Developer Network (MDN) Web Docs] (https://developer.mozilla.org/en-US/docs/Web)
+
+---
+ 
