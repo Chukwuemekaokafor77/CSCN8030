@@ -21,7 +21,7 @@ def local_css(file_name):
         st.sidebar.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Provide the path to the style.css file
-style_css_path = r"C:\Users\Admin\Documents\MLAI\CSCN8030\Proje_Sprint2\docs\assets\style.css"
+style_css_path = r"C:\Users\Admin\Documents\MLAI\CSCN8030\Proje_Sprint2\docs\assets\style.cssstyle.css"
 local_css(style_css_path)
 
 # Predefined list of popular stock tickers
